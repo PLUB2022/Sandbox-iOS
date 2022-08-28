@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BA13A25F28BB974800A48560 /* ReactorKit in Frameworks */ = {isa = PBXBuildFile; productRef = BA13A25E28BB974800A48560 /* ReactorKit */; };
 		BA88751F28B8AFEB00825747 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA88751E28B8AFEB00825747 /* AppDelegate.swift */; };
 		BA88752128B8AFEB00825747 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA88752028B8AFEB00825747 /* SceneDelegate.swift */; };
 		BA88752328B8AFEB00825747 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA88752228B8AFEB00825747 /* ViewController.swift */; };
@@ -36,6 +37,7 @@
 				BA9989E728B8B3C900427AEA /* SnapKit in Frameworks */,
 				BA9989E428B8B38200427AEA /* RxSwift in Frameworks */,
 				BA9989E228B8B38200427AEA /* RxCocoa in Frameworks */,
+				BA13A25F28BB974800A48560 /* ReactorKit in Frameworks */,
 				BA9989EA28B8B40800427AEA /* Then in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -94,6 +96,7 @@
 				BA9989E328B8B38200427AEA /* RxSwift */,
 				BA9989E628B8B3C900427AEA /* SnapKit */,
 				BA9989E928B8B40800427AEA /* Then */,
+				BA13A25E28BB974800A48560 /* ReactorKit */,
 			);
 			productName = WeatherApp;
 			productReference = BA88751B28B8AFEB00825747 /* WeatherApp.app */;
@@ -127,6 +130,7 @@
 				BA9989E028B8B38200427AEA /* XCRemoteSwiftPackageReference "RxSwift" */,
 				BA9989E528B8B3C900427AEA /* XCRemoteSwiftPackageReference "SnapKit" */,
 				BA9989E828B8B40800427AEA /* XCRemoteSwiftPackageReference "Then" */,
+				BA13A25D28BB974800A48560 /* XCRemoteSwiftPackageReference "ReactorKit" */,
 			);
 			productRefGroup = BA88751C28B8AFEB00825747 /* Products */;
 			projectDirPath = "";
@@ -389,6 +393,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		BA13A25D28BB974800A48560 /* XCRemoteSwiftPackageReference "ReactorKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ReactorKit/ReactorKit";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 		BA9989E028B8B38200427AEA /* XCRemoteSwiftPackageReference "RxSwift" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/ReactiveX/RxSwift.git";
@@ -416,6 +428,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		BA13A25E28BB974800A48560 /* ReactorKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BA13A25D28BB974800A48560 /* XCRemoteSwiftPackageReference "ReactorKit" */;
+			productName = ReactorKit;
+		};
 		BA9989E128B8B38200427AEA /* RxCocoa */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = BA9989E028B8B38200427AEA /* XCRemoteSwiftPackageReference "RxSwift" */;
