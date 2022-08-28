@@ -45,6 +45,49 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BA13A26028BB9C6C00A48560 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				BA88752728B8AFEB00825747 /* Assets.xcassets */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		BA13A26128BB9C7B00A48560 /* Configuration */ = {
+			isa = PBXGroup;
+			children = (
+				BA13A26028BB9C6C00A48560 /* Assets */,
+			);
+			path = Configuration;
+			sourceTree = "<group>";
+		};
+		BA13A26328BB9CCB00A48560 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				BA13A26428BB9D5C00A48560 /* Views */,
+				BA88751E28B8AFEB00825747 /* AppDelegate.swift */,
+				BA88752028B8AFEB00825747 /* SceneDelegate.swift */,
+				BA13A26528BB9DAE00A48560 /* Home */,
+				BA88752928B8AFEB00825747 /* LaunchScreen.storyboard */,
+			);
+			path = Source;
+			sourceTree = "<group>";
+		};
+		BA13A26428BB9D5C00A48560 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		BA13A26528BB9DAE00A48560 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				BA88752228B8AFEB00825747 /* ViewController.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
 		BA88751228B8AFEB00825747 = {
 			isa = PBXGroup;
 			children = (
@@ -64,11 +107,8 @@
 		BA88751D28B8AFEB00825747 /* WeatherApp */ = {
 			isa = PBXGroup;
 			children = (
-				BA88751E28B8AFEB00825747 /* AppDelegate.swift */,
-				BA88752028B8AFEB00825747 /* SceneDelegate.swift */,
-				BA88752228B8AFEB00825747 /* ViewController.swift */,
-				BA88752728B8AFEB00825747 /* Assets.xcassets */,
-				BA88752928B8AFEB00825747 /* LaunchScreen.storyboard */,
+				BA13A26128BB9C7B00A48560 /* Configuration */,
+				BA13A26328BB9CCB00A48560 /* Source */,
 				BA88752C28B8AFEB00825747 /* Info.plist */,
 			);
 			path = WeatherApp;
