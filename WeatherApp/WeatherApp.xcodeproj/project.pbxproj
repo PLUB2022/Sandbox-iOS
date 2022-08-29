@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		BA13A25F28BB974800A48560 /* ReactorKit in Frameworks */ = {isa = PBXBuildFile; productRef = BA13A25E28BB974800A48560 /* ReactorKit */; };
+		BA5A10F628BCD81C0047E200 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA5A10F528BCD81C0047E200 /* BaseViewController.swift */; };
 		BA88751F28B8AFEB00825747 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA88751E28B8AFEB00825747 /* AppDelegate.swift */; };
 		BA88752128B8AFEB00825747 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA88752028B8AFEB00825747 /* SceneDelegate.swift */; };
 		BA88752328B8AFEB00825747 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA88752228B8AFEB00825747 /* HomeViewController.swift */; };
@@ -20,6 +21,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BA5A10F528BCD81C0047E200 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		BA88751B28B8AFEB00825747 /* WeatherApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeatherApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA88751E28B8AFEB00825747 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BA88752028B8AFEB00825747 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -73,6 +75,7 @@
 			isa = PBXGroup;
 			children = (
 				BA88751E28B8AFEB00825747 /* AppDelegate.swift */,
+				BA5A10F528BCD81C0047E200 /* BaseViewController.swift */,
 				BA88752028B8AFEB00825747 /* SceneDelegate.swift */,
 				BA13A26528BB9DAE00A48560 /* Home */,
 				BA88752928B8AFEB00825747 /* LaunchScreen.storyboard */,
@@ -220,6 +223,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BA88752328B8AFEB00825747 /* HomeViewController.swift in Sources */,
+				BA5A10F628BCD81C0047E200 /* BaseViewController.swift in Sources */,
 				BA88751F28B8AFEB00825747 /* AppDelegate.swift in Sources */,
 				BA88752128B8AFEB00825747 /* SceneDelegate.swift in Sources */,
 			);
