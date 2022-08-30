@@ -18,6 +18,7 @@
 		BA9989E428B8B38200427AEA /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = BA9989E328B8B38200427AEA /* RxSwift */; };
 		BA9989E728B8B3C900427AEA /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = BA9989E628B8B3C900427AEA /* SnapKit */; };
 		BA9989EA28B8B40800427AEA /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = BA9989E928B8B40800427AEA /* Then */; };
+		BAF68C8528BDA9D8009E22E5 /* Ex+UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAF68C8428BDA9D8009E22E5 /* Ex+UIColor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +30,7 @@
 		BA88752728B8AFEB00825747 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BA88752A28B8AFEB00825747 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BA88752C28B8AFEB00825747 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BAF68C8428BDA9D8009E22E5 /* Ex+UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Ex+UIColor.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +61,7 @@
 			isa = PBXGroup;
 			children = (
 				BA13A26028BB9C6C00A48560 /* Assets */,
+				BAF68C8328BDA960009E22E5 /* Extensions */,
 			);
 			path = Configuration;
 			sourceTree = "<group>";
@@ -115,6 +118,14 @@
 				BA88752C28B8AFEB00825747 /* Info.plist */,
 			);
 			path = WeatherApp;
+			sourceTree = "<group>";
+		};
+		BAF68C8328BDA960009E22E5 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				BAF68C8428BDA9D8009E22E5 /* Ex+UIColor.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -224,6 +235,7 @@
 			files = (
 				BA88752328B8AFEB00825747 /* HomeViewController.swift in Sources */,
 				BA5A10F628BCD81C0047E200 /* BaseViewController.swift in Sources */,
+				BAF68C8528BDA9D8009E22E5 /* Ex+UIColor.swift in Sources */,
 				BA88751F28B8AFEB00825747 /* AppDelegate.swift in Sources */,
 				BA88752128B8AFEB00825747 /* SceneDelegate.swift in Sources */,
 			);
