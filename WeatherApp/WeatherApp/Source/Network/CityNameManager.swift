@@ -30,11 +30,23 @@ enum CityNameManager: URLRequestConvertible {
     return "get"
   }
 
+  var parameters: Parameters {
+    var params = Parameters()
+
+    switch self {
+    case let .findCity(name: name):
+      params["query"] = name
+    }
+
+    return params
+  }
+
   func asURLRequest() throws -> URLRequest {
     let url = baseURL.appendingPathExtension(path)
     var request = URLRequest(url: url)
     request.method = httpMethod
     request.headers = httpHeaders
+    request.httpBody = try JSONEncoding.default.encode(request, with: parameters).httpBody
     return request
   }
 }
