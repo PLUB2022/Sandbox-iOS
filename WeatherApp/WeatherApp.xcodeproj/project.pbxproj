@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		BA0AE15928BFB3670035854C /* APIConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA0AE15828BFB3670035854C /* APIConstants.swift */; };
 		BA0AE15E28BFB9940035854C /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = BA0AE15D28BFB9940035854C /* Alamofire */; };
+		BA0AE16028BFB9DE0035854C /* CityNameManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA0AE15F28BFB9DE0035854C /* CityNameManager.swift */; };
 		BA13A25F28BB974800A48560 /* ReactorKit in Frameworks */ = {isa = PBXBuildFile; productRef = BA13A25E28BB974800A48560 /* ReactorKit */; };
 		BA5A10F628BCD81C0047E200 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA5A10F528BCD81C0047E200 /* BaseViewController.swift */; };
 		BA88751F28B8AFEB00825747 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA88751E28B8AFEB00825747 /* AppDelegate.swift */; };
@@ -25,6 +26,7 @@
 
 /* Begin PBXFileReference section */
 		BA0AE15828BFB3670035854C /* APIConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIConstants.swift; sourceTree = "<group>"; };
+		BA0AE15F28BFB9DE0035854C /* CityNameManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityNameManager.swift; sourceTree = "<group>"; };
 		BA5A10F528BCD81C0047E200 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		BA88751B28B8AFEB00825747 /* WeatherApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeatherApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA88751E28B8AFEB00825747 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -57,6 +59,7 @@
 			isa = PBXGroup;
 			children = (
 				BA0AE15828BFB3670035854C /* APIConstants.swift */,
+				BA0AE15F28BFB9DE0035854C /* CityNameManager.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -248,6 +251,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BA0AE16028BFB9DE0035854C /* CityNameManager.swift in Sources */,
 				BA88752328B8AFEB00825747 /* HomeViewController.swift in Sources */,
 				BA5A10F628BCD81C0047E200 /* BaseViewController.swift in Sources */,
 				BA0AE15928BFB3670035854C /* APIConstants.swift in Sources */,
