@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		BA0AE15928BFB3670035854C /* APIConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA0AE15828BFB3670035854C /* APIConstants.swift */; };
+		BA0AE15E28BFB9940035854C /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = BA0AE15D28BFB9940035854C /* Alamofire */; };
 		BA13A25F28BB974800A48560 /* ReactorKit in Frameworks */ = {isa = PBXBuildFile; productRef = BA13A25E28BB974800A48560 /* ReactorKit */; };
 		BA5A10F628BCD81C0047E200 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA5A10F528BCD81C0047E200 /* BaseViewController.swift */; };
 		BA88751F28B8AFEB00825747 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA88751E28B8AFEB00825747 /* AppDelegate.swift */; };
@@ -43,6 +44,7 @@
 				BA9989E728B8B3C900427AEA /* SnapKit in Frameworks */,
 				BA9989E428B8B38200427AEA /* RxSwift in Frameworks */,
 				BA9989E228B8B38200427AEA /* RxCocoa in Frameworks */,
+				BA0AE15E28BFB9940035854C /* Alamofire in Frameworks */,
 				BA13A25F28BB974800A48560 /* ReactorKit in Frameworks */,
 				BA9989EA28B8B40800427AEA /* Then in Frameworks */,
 			);
@@ -162,6 +164,7 @@
 				BA9989E628B8B3C900427AEA /* SnapKit */,
 				BA9989E928B8B40800427AEA /* Then */,
 				BA13A25E28BB974800A48560 /* ReactorKit */,
+				BA0AE15D28BFB9940035854C /* Alamofire */,
 			);
 			productName = WeatherApp;
 			productReference = BA88751B28B8AFEB00825747 /* WeatherApp.app */;
@@ -196,6 +199,7 @@
 				BA9989E528B8B3C900427AEA /* XCRemoteSwiftPackageReference "SnapKit" */,
 				BA9989E828B8B40800427AEA /* XCRemoteSwiftPackageReference "Then" */,
 				BA13A25D28BB974800A48560 /* XCRemoteSwiftPackageReference "ReactorKit" */,
+				BA0AE15C28BFB9940035854C /* XCRemoteSwiftPackageReference "Alamofire" */,
 			);
 			productRefGroup = BA88751C28B8AFEB00825747 /* Products */;
 			projectDirPath = "";
@@ -461,6 +465,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		BA0AE15C28BFB9940035854C /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 		BA13A25D28BB974800A48560 /* XCRemoteSwiftPackageReference "ReactorKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/ReactorKit/ReactorKit";
@@ -496,6 +508,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		BA0AE15D28BFB9940035854C /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BA0AE15C28BFB9940035854C /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
 		BA13A25E28BB974800A48560 /* ReactorKit */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = BA13A25D28BB974800A48560 /* XCRemoteSwiftPackageReference "ReactorKit" */;
