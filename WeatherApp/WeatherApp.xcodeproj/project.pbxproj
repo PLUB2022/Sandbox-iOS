@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BA0AE15928BFB3670035854C /* APIConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA0AE15828BFB3670035854C /* APIConstants.swift */; };
 		BA13A25F28BB974800A48560 /* ReactorKit in Frameworks */ = {isa = PBXBuildFile; productRef = BA13A25E28BB974800A48560 /* ReactorKit */; };
 		BA5A10F628BCD81C0047E200 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA5A10F528BCD81C0047E200 /* BaseViewController.swift */; };
 		BA88751F28B8AFEB00825747 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA88751E28B8AFEB00825747 /* AppDelegate.swift */; };
@@ -22,6 +23,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BA0AE15828BFB3670035854C /* APIConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIConstants.swift; sourceTree = "<group>"; };
 		BA5A10F528BCD81C0047E200 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		BA88751B28B8AFEB00825747 /* WeatherApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeatherApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA88751E28B8AFEB00825747 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -49,6 +51,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BA0AE15728BFB3520035854C /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				BA0AE15828BFB3670035854C /* APIConstants.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
 		BA13A26028BB9C6C00A48560 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
@@ -69,6 +79,7 @@
 		BA13A26328BB9CCB00A48560 /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				BA0AE15728BFB3520035854C /* Network */,
 				BA13A26428BB9D5C00A48560 /* Views */,
 			);
 			path = Source;
@@ -235,6 +246,7 @@
 			files = (
 				BA88752328B8AFEB00825747 /* HomeViewController.swift in Sources */,
 				BA5A10F628BCD81C0047E200 /* BaseViewController.swift in Sources */,
+				BA0AE15928BFB3670035854C /* APIConstants.swift in Sources */,
 				BAF68C8528BDA9D8009E22E5 /* Ex+UIColor.swift in Sources */,
 				BA88751F28B8AFEB00825747 /* AppDelegate.swift in Sources */,
 				BA88752128B8AFEB00825747 /* SceneDelegate.swift in Sources */,

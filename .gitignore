@@ -138,4 +138,7 @@ iOSInjectionProject/
 /*.gcno
 **/xcshareddata/WorkspaceSettings.xcsettings
 
+### API Constants ###
+/WeatherApp/WeatherApp/Source/Network/APIConstants.swift
+
 # End of https://www.toptal.com/developers/gitignore/api/xcode,macos,cocoapods,swift
