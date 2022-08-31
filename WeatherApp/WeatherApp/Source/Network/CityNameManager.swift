@@ -10,22 +10,22 @@ import Alamofire
 
 enum CityNameManager: URLRequestConvertible {
 
-  case `get`
+  case findCity(name: String)
 
   var baseURL: URL {
     return URL(string: APIConstants.CityName.url)!
   }
-  
+
   var httpHeaders: HTTPHeaders {
     var headers = HTTPHeaders()
     headers["Authorization"] = "KakaoAK \(APIConstants.CityName.accessToken)"
     return headers
   }
-  
+
   var httpMethod: HTTPMethod {
     return .get
   }
-  
+
   var path: String {
     return "get"
   }
