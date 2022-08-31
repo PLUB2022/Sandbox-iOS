@@ -15,13 +15,13 @@ struct CityName: Codable {
 // MARK: - Document
 struct Document: Codable {
   let addressName: String
-  let x: String
-  let y: String
-  
+  let longitude: String
+  let latitude: String
+
   enum CodingKeys: String, CodingKey {
     case addressName = "address_name"
-    case x
-    case y
+    case longitude = "x"
+    case latitude = "y"
   }
 }
 
@@ -30,7 +30,7 @@ struct Meta: Codable {
   let isEnd: Bool
   let pageableCount: Int
   let totalCount: Int
-  
+
   enum CodingKeys: String, CodingKey {
     case isEnd = "is_end"
     case pageableCount = "pageable_count"
