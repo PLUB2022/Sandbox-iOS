@@ -27,3 +27,26 @@ extension UIColor {
     )
   }
 }
+
+extension UIColor {
+
+  enum ExtensionName: String {
+    case png
+    case jpg
+    case bmp
+    case jpeg
+    case jfif
+  }
+
+  /// Creates a color object with the image within the asset.
+  /// - Parameters:
+  ///   - named: image name
+  ///   - extension: extension file name
+  /// - Returns: UIColor object with image
+  static func backgroundImage(named: String, extension: ExtensionName) -> UIColor? {
+    guard let image = UIImage(named: "\(named).\(`extension`.rawValue)") else {
+      return nil
+    }
+    return UIColor(patternImage: image)
+  }
+}
