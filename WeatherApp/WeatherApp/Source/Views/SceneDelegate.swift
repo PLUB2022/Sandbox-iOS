@@ -21,10 +21,12 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     let window = UIWindow(windowScene: scene)
     self.window = window
 
-    let baseVC = UINavigationController(rootViewController: HomeViewController())
-    baseVC.navigationBar.tintColor = .white
-    
-    window.rootViewController = baseVC
+    let navigationController = UINavigationController()
+    navigationController.navigationBar.tintColor = .white
+    window.rootViewController = navigationController
+
+    let coordinator = HomeCoordinator(navigationController: navigationController)
+    coordinator.start()
 
     window.makeKeyAndVisible()
   }
