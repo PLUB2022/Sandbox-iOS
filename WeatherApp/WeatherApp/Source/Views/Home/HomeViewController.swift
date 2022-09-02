@@ -67,6 +67,13 @@ class HomeViewController: BaseViewController {
     [cityLabel, temperatureLabel, descriptionLabel].forEach {
       stackView.addArrangedSubview($0)
     }
+
+    navigationItem.rightBarButtonItem = UIBarButtonItem(
+      image: UIImage(systemName: "plus.circle"),
+      style: .plain,
+      target: nil,
+      action: nil
+    )
   }
 
   override func setupConstraints() {
