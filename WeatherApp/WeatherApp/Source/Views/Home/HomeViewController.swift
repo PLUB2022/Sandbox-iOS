@@ -12,11 +12,16 @@ import RxCocoa
 import SnapKit
 import Then
 
+protocol HomeViewControllerDelegate: AnyObject {
+  func moveToAddViewController()
+}
+
 class HomeViewController: BaseViewController {
 
   // MARK: - Properties
 
   let disposeBag = DisposeBag()
+  var delegate: HomeViewControllerDelegate? // called by coordinators
 
   private let cityLabel = UILabel().then {
     $0.text = "Montreal"
@@ -71,8 +76,8 @@ class HomeViewController: BaseViewController {
     navigationItem.rightBarButtonItem = UIBarButtonItem(
       image: UIImage(systemName: "plus.circle"),
       style: .plain,
-      target: nil,
-      action: nil
+      target: self,
+      action: #selector(addButtonDidTap)
     )
   }
 
@@ -92,5 +97,11 @@ class HomeViewController: BaseViewController {
       make.height.equalTo(314)
       make.bottom.leading.trailing.equalToSuperview()
     }
+  }
+
+  // MARK: - Objc Functions
+
+  @objc private func addButtonDidTap() {
+    delegate?.moveToAddViewController()
   }
 }
