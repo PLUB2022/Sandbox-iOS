@@ -13,7 +13,12 @@ enum CityNameManager: URLRequestConvertible {
   case findCity(name: String)
 
   var baseURL: URL {
-    return URL(string: APIConstants.CityName.url)!
+    switch self {
+    case let .findCity(name: name):
+      var url = URLComponents(string: APIConstants.CityName.url)!
+      url.queryItems = [URLQueryItem(name: "query", value: name)]
+      return url.url!
+    }
   }
 
   var httpHeaders: HTTPHeaders {
@@ -24,10 +29,6 @@ enum CityNameManager: URLRequestConvertible {
 
   var httpMethod: HTTPMethod {
     return .get
-  }
-
-  var path: String {
-    return "get"
   }
 
   var parameters: Parameters {
@@ -42,11 +43,9 @@ enum CityNameManager: URLRequestConvertible {
   }
 
   func asURLRequest() throws -> URLRequest {
-    let url = baseURL.appendingPathExtension(path)
-    var request = URLRequest(url: url)
+    var request = URLRequest(url: baseURL)
     request.method = httpMethod
     request.headers = httpHeaders
-    request.httpBody = try JSONEncoding.default.encode(request, with: parameters).httpBody
     return request
   }
 }
