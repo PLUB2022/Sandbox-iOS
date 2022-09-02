@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class AddCityViewController: UIViewController {
+final class AddCityViewController: BaseViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
