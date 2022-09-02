@@ -112,11 +112,11 @@
 		BA13A26428BB9D5C00A48560 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				BA4E265428C2254C00AE3584 /* AddCity */,
 				BA88751E28B8AFEB00825747 /* AppDelegate.swift */,
 				BA5A10F528BCD81C0047E200 /* BaseViewController.swift */,
 				BA4E264E28C1E12A00AE3584 /* Coordinator.swift */,
 				BA88752028B8AFEB00825747 /* SceneDelegate.swift */,
+				BA4E265428C2254C00AE3584 /* AddCity */,
 				BA13A26528BB9DAE00A48560 /* Home */,
 				BA88752928B8AFEB00825747 /* LaunchScreen.storyboard */,
 			);

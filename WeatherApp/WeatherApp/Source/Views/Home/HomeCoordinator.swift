@@ -17,6 +17,7 @@ class HomeCoordinator: Coordinator {
 
 extension HomeCoordinator: HomeViewControllerDelegate {
   func moveToAddViewController() {
-    // TODO: Present Add View Controller
+    let coordinator = AddCityCoordinator(navigationController: navigationController)
+    coordinator.start()
   }
 }
