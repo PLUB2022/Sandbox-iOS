@@ -14,6 +14,7 @@ final class AddCityViewController: BaseViewController {
 
   private let searchController = UISearchController(searchResultsController: SearchResultsViewController()).then {
     $0.searchBar.searchBarStyle = .minimal
+    $0.searchBar.placeholder = "도시 검색"
   }
 
   private lazy var tableView = UITableView().then {
@@ -51,7 +52,7 @@ final class AddCityViewController: BaseViewController {
     navigationController?.navigationBar.largeTitleTextAttributes = [.foregroundColor: UIColor.white]
     navigationController?.navigationBar.prefersLargeTitles = true
     navigationItem.largeTitleDisplayMode = .always
-    navigationItem.title = "Weather"
+    navigationItem.title = "Cities"
 
     // MARK: Background
     let layer = CAGradientLayer().then {
