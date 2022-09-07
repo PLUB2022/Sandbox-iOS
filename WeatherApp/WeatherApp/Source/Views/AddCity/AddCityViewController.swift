@@ -12,7 +12,7 @@ import Then
 
 final class AddCityViewController: BaseViewController {
 
-  private let searchController = UISearchController().then {
+  private let searchController = UISearchController(searchResultsController: SearchResultsViewController()).then {
     $0.searchBar.searchBarStyle = .minimal
   }
 
