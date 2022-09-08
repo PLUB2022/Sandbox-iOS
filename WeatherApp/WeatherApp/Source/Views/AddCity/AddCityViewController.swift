@@ -12,9 +12,10 @@ import Then
 
 final class AddCityViewController: BaseViewController {
 
-  private let searchController = UISearchController(searchResultsController: SearchResultsViewController()).then {
+  private lazy var searchController = UISearchController(searchResultsController: SearchResultsViewController()).then {
     $0.searchBar.searchBarStyle = .minimal
     $0.searchBar.placeholder = "도시 검색"
+    $0.searchResultsUpdater = self
   }
 
   private lazy var tableView = UITableView().then {
@@ -73,4 +74,13 @@ extension AddCityViewController: UITableViewDataSource {
 
 extension AddCityViewController: UITableViewDelegate {
 
+}
+
+// MARK: - UISearchResultsUpdating
+
+extension AddCityViewController: UISearchResultsUpdating {
+
+  func updateSearchResults(for searchController: UISearchController) {
+    print(#function)
+  }
 }
