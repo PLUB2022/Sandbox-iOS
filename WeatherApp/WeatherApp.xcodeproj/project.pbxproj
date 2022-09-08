@@ -27,6 +27,7 @@
 		BA9989E728B8B3C900427AEA /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = BA9989E628B8B3C900427AEA /* SnapKit */; };
 		BA9989EA28B8B40800427AEA /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = BA9989E928B8B40800427AEA /* Then */; };
 		BAAF403828C8C85A007E1FEA /* SearchResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAAF403728C8C85A007E1FEA /* SearchResultsViewController.swift */; };
+		BAAF403B28C9E380007E1FEA /* Ex+CALayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAAF403A28C9E380007E1FEA /* Ex+CALayer.swift */; };
 		BAF68C8528BDA9D8009E22E5 /* Ex+UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAF68C8428BDA9D8009E22E5 /* Ex+UIColor.swift */; };
 /* End PBXBuildFile section */
 
@@ -47,6 +48,7 @@
 		BA88752A28B8AFEB00825747 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BA88752C28B8AFEB00825747 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BAAF403728C8C85A007E1FEA /* SearchResultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsViewController.swift; sourceTree = "<group>"; };
+		BAAF403A28C9E380007E1FEA /* Ex+CALayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Ex+CALayer.swift"; sourceTree = "<group>"; };
 		BAF68C8428BDA9D8009E22E5 /* Ex+UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Ex+UIColor.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -173,6 +175,7 @@
 		BAF68C8328BDA960009E22E5 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				BAAF403A28C9E380007E1FEA /* Ex+CALayer.swift */,
 				BAF68C8428BDA9D8009E22E5 /* Ex+UIColor.swift */,
 			);
 			path = Extensions;
@@ -289,6 +292,7 @@
 				BA88752328B8AFEB00825747 /* HomeViewController.swift in Sources */,
 				BA5A10F628BCD81C0047E200 /* BaseViewController.swift in Sources */,
 				BA0AE16328BFBC850035854C /* CityName.swift in Sources */,
+				BAAF403B28C9E380007E1FEA /* Ex+CALayer.swift in Sources */,
 				BA0AE15928BFB3670035854C /* APIConstants.swift in Sources */,
 				BA4E265628C2258500AE3584 /* AddCityCoordinator.swift in Sources */,
 				BAF68C8528BDA9D8009E22E5 /* Ex+UIColor.swift in Sources */,
