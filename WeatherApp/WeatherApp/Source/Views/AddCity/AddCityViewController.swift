@@ -53,18 +53,6 @@ final class AddCityViewController: BaseViewController {
     navigationController?.navigationBar.prefersLargeTitles = true
     navigationItem.largeTitleDisplayMode = .always
     navigationItem.title = "Cities"
-
-    // MARK: Background
-    let layer = CAGradientLayer().then {
-      $0.colors = [
-        UIColor.init(rgb: 0x2E335A).cgColor,
-        UIColor.init(rgb: 0x1C1B33).cgColor
-      ]
-      $0.locations = [0, 1]
-      $0.frame = view.bounds
-    }
-
-    view.layer.addSublayer(layer)
   }
 }
 
