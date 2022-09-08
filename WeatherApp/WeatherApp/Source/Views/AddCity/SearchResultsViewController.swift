@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class SearchResultsViewController: UIViewController {
+final class SearchResultsViewController: BaseViewController {
 
   // MARK: - Life Cycle
 
