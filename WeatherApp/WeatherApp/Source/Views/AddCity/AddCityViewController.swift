@@ -21,7 +21,8 @@ final class AddCityViewController: BaseViewController {
   private lazy var tableView = UITableView().then {
     $0.dataSource = self
     $0.delegate = self
-    $0.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
+    $0.register(AddCityTableViewCell.self, forCellReuseIdentifier: AddCityTableViewCell.id)
+    $0.backgroundColor = .clear
   }
 
   // MARK: - Life Cycle
@@ -66,7 +67,15 @@ extension AddCityViewController: UITableViewDataSource {
   }
 
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    return tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
+    guard let cell = tableView.dequeueReusableCell(
+      withIdentifier: AddCityTableViewCell.id,
+      for: indexPath
+    ) as? AddCityTableViewCell
+    else {
+      fatalError("AddCityViewController -> UITableViewDataSource.tableView(_:cellForRowAt:)")
+    }
+    cell.configure(city: "Hello")
+    return cell
   }
 }
 

@@ -22,6 +22,7 @@
 		BA88752328B8AFEB00825747 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA88752228B8AFEB00825747 /* HomeViewController.swift */; };
 		BA88752828B8AFEB00825747 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BA88752728B8AFEB00825747 /* Assets.xcassets */; };
 		BA88752B28B8AFEB00825747 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA88752928B8AFEB00825747 /* LaunchScreen.storyboard */; };
+		BA95C47A28CACB5700F4985E /* AddCityTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA95C47928CACB5700F4985E /* AddCityTableViewCell.swift */; };
 		BA9989E228B8B38200427AEA /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = BA9989E128B8B38200427AEA /* RxCocoa */; };
 		BA9989E428B8B38200427AEA /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = BA9989E328B8B38200427AEA /* RxSwift */; };
 		BA9989E728B8B3C900427AEA /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = BA9989E628B8B3C900427AEA /* SnapKit */; };
@@ -47,6 +48,7 @@
 		BA88752728B8AFEB00825747 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BA88752A28B8AFEB00825747 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BA88752C28B8AFEB00825747 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BA95C47928CACB5700F4985E /* AddCityTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCityTableViewCell.swift; sourceTree = "<group>"; };
 		BAAF403728C8C85A007E1FEA /* SearchResultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsViewController.swift; sourceTree = "<group>"; };
 		BAAF403A28C9E380007E1FEA /* Ex+CALayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Ex+CALayer.swift"; sourceTree = "<group>"; };
 		BAF68C8428BDA9D8009E22E5 /* Ex+UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Ex+UIColor.swift"; sourceTree = "<group>"; };
@@ -140,6 +142,7 @@
 			isa = PBXGroup;
 			children = (
 				BA4E265528C2258500AE3584 /* AddCityCoordinator.swift */,
+				BA95C47928CACB5700F4985E /* AddCityTableViewCell.swift */,
 				BA4E265228C2254600AE3584 /* AddCityViewController.swift */,
 				BAAF403728C8C85A007E1FEA /* SearchResultsViewController.swift */,
 			);
@@ -291,6 +294,7 @@
 				BA0AE16028BFB9DE0035854C /* CityNameManager.swift in Sources */,
 				BA88752328B8AFEB00825747 /* HomeViewController.swift in Sources */,
 				BA5A10F628BCD81C0047E200 /* BaseViewController.swift in Sources */,
+				BA95C47A28CACB5700F4985E /* AddCityTableViewCell.swift in Sources */,
 				BA0AE16328BFBC850035854C /* CityName.swift in Sources */,
 				BAAF403B28C9E380007E1FEA /* Ex+CALayer.swift in Sources */,
 				BA0AE15928BFB3670035854C /* APIConstants.swift in Sources */,

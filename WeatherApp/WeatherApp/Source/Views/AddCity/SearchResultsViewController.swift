@@ -17,7 +17,8 @@ final class SearchResultsViewController: BaseViewController {
   private lazy var tableView = UITableView().then {
     $0.dataSource = self
     $0.delegate = self
-    $0.register(UITableViewCell.self, forCellReuseIdentifier: "TableView")
+    $0.register(AddCityTableViewCell.self, forCellReuseIdentifier: AddCityTableViewCell.id)
+    $0.backgroundColor = .clear
   }
 
   // MARK: - Life Cycle
@@ -50,8 +51,15 @@ extension SearchResultsViewController: UITableViewDataSource {
   }
 
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    let cell = tableView.dequeueReusableCell(withIdentifier: "TableView", for: indexPath)
-    cell.textLabel?.text = "Hello, World!"
+    guard let cell = tableView.dequeueReusableCell(
+      withIdentifier: AddCityTableViewCell.id,
+      for: indexPath
+    ) as? AddCityTableViewCell
+    else {
+      fatalError("SearchResultsViewController -> UITableViewDataSource.tableView(_:cellForRowAt:)")
+    }
+
+    cell.configure(city: "Hello, World!")
     return cell
   }
 }
