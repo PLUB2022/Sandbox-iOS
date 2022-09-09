@@ -7,6 +7,8 @@
 
 import UIKit
 
+import RxCocoa
+import RxSwift
 import SnapKit
 import Then
 
@@ -14,11 +16,10 @@ final class SearchResultsViewController: BaseViewController {
 
   // MARK: - Properties
 
+  private let disposeBag = DisposeBag()
   var viewModel = SearchResultsViewModel()
 
   lazy var tableView = UITableView().then {
-    $0.dataSource = self
-    $0.delegate = self
     $0.register(AddCityTableViewCell.self, forCellReuseIdentifier: AddCityTableViewCell.id)
     $0.backgroundColor = .clear
   }
@@ -27,6 +28,21 @@ final class SearchResultsViewController: BaseViewController {
 
   override func viewDidLoad() {
     super.viewDidLoad()
+
+    // TODO: 나중에 ReactorKit의 bind로 빼야합니다.
+    viewModel.cities
+      .bind(
+      to: tableView.rx.items(cellIdentifier: AddCityTableViewCell.id, cellType: AddCityTableViewCell.self)
+      ) { _, element, cell in
+        cell.configure(city: element.addressName)
+      }
+      .disposed(by: disposeBag)
+
+    tableView.rx.itemSelected
+      .subscribe(onNext: { [weak self] _ in
+        self?.dismiss(animated: true)
+      })
+      .disposed(by: disposeBag)
   }
 
   // MARK: - Layout Configuration
@@ -41,37 +57,5 @@ final class SearchResultsViewController: BaseViewController {
     tableView.snp.makeConstraints { make in
       make.edges.equalTo(view.safeAreaLayoutGuide)
     }
-  }
-}
-
-// MARK: - UITableViewDataSource
-
-extension SearchResultsViewController: UITableViewDataSource {
-
-  func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return viewModel.numberOfRowsInSection
-  }
-
-  func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    guard let cell = tableView.dequeueReusableCell(
-      withIdentifier: AddCityTableViewCell.id,
-      for: indexPath
-    ) as? AddCityTableViewCell
-    else {
-      fatalError("SearchResultsViewController -> UITableViewDataSource.tableView(_:cellForRowAt:)")
-    }
-
-    cell.configure(city: viewModel.cities[indexPath.row].addressName)
-    return cell
-  }
-}
-
-// MARK: - UITableViewDelegate
-
-extension SearchResultsViewController: UITableViewDelegate {
-
-  func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-    let cell = tableView.cellForRow(at: indexPath)
-    dismiss(animated: true)
   }
 }

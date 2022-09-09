@@ -7,10 +7,8 @@
 
 import Foundation
 
-struct SearchResultsViewModel {
-  var cities = [Document]()
+import RxCocoa
 
-  var numberOfRowsInSection: Int {
-    return cities.count
-  }
+struct SearchResultsViewModel {
+  var cities = BehaviorRelay(value: [Document]())
 }
