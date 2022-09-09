@@ -16,7 +16,7 @@ final class SearchResultsViewController: BaseViewController {
 
   var viewModel = SearchResultsViewModel()
 
-  private lazy var tableView = UITableView().then {
+  lazy var tableView = UITableView().then {
     $0.dataSource = self
     $0.delegate = self
     $0.register(AddCityTableViewCell.self, forCellReuseIdentifier: AddCityTableViewCell.id)

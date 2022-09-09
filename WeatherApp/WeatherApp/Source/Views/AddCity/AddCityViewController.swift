@@ -7,6 +7,7 @@
 
 import UIKit
 
+import Alamofire
 import SnapKit
 import Then
 
@@ -90,6 +91,25 @@ extension AddCityViewController: UITableViewDelegate {
 extension AddCityViewController: UISearchResultsUpdating {
 
   func updateSearchResults(for searchController: UISearchController) {
-    print(#function)
+    guard let resultsController = searchController.searchResultsController as? SearchResultsViewController,
+          let query = searchController.searchBar.text,
+          !query.trimmingCharacters(in: .whitespaces).isEmpty,
+          query.trimmingCharacters(in: .whitespaces).count >= 2
+    else { return }
+
+    AF
+      .request(CityNameManager.findCity(name: query))
+      .responseDecodable(of: CityName.self) { response in
+        switch response.result {
+        case .success(let cities):
+          DispatchQueue.main.async {
+            resultsController.viewModel.cities = cities.documents
+            resultsController.tableView.reloadData()
+          }
+        case .failure(let error):
+          print(error)
+        }
+      }
+      .resume()
   }
 }
