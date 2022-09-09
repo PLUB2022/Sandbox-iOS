@@ -13,6 +13,8 @@ import Then
 
 final class AddCityViewController: BaseViewController {
 
+  private var viewModel = AddCityViewModel()
+
   private lazy var searchController = UISearchController(searchResultsController: SearchResultsViewController()).then {
     $0.searchBar.searchBarStyle = .minimal
     $0.searchBar.placeholder = "도시 검색"
@@ -64,7 +66,7 @@ final class AddCityViewController: BaseViewController {
 extension AddCityViewController: UITableViewDataSource {
 
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return 3
+    return viewModel.items.count
   }
 
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -75,7 +77,7 @@ extension AddCityViewController: UITableViewDataSource {
     else {
       fatalError("AddCityViewController -> UITableViewDataSource.tableView(_:cellForRowAt:)")
     }
-    cell.configure(city: "Hello")
+    cell.configure(city: viewModel.items[indexPath.row].addressName)
     return cell
   }
 }
