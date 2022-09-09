@@ -40,12 +40,11 @@ final class AddCityTableViewCell: UITableViewCell {
 
     cityLabel.snp.makeConstraints { make in
       make.edges.equalToSuperview().inset(10)
-      make.height.equalTo(50)
     }
 
     // clear background color
     backgroundColor = .clear
-    
+
     // border & corner radius
     contentView.layer.cornerRadius = 15
     contentView.layer.borderWidth = 2
