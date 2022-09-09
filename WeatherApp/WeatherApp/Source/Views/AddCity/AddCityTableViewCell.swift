@@ -19,7 +19,7 @@ final class AddCityTableViewCell: UITableViewCell {
   private let cityLabel = UILabel().then {
     $0.textAlignment = .center
     $0.textColor = .white
-    $0.font = .systemFont(ofSize: 40)
+    $0.font = .systemFont(ofSize: 30)
   }
 
   // MARK: - Initialization
@@ -39,11 +39,17 @@ final class AddCityTableViewCell: UITableViewCell {
     contentView.addSubview(cityLabel)
 
     cityLabel.snp.makeConstraints { make in
-      make.edges.equalToSuperview()
+      make.edges.equalToSuperview().inset(10)
+      make.height.equalTo(50)
     }
 
     // clear background color
     backgroundColor = .clear
+    
+    // border & corner radius
+    contentView.layer.cornerRadius = 15
+    contentView.layer.borderWidth = 2
+    contentView.layer.borderColor = UIColor.white.cgColor
   }
 
   func configure(city: String) {
