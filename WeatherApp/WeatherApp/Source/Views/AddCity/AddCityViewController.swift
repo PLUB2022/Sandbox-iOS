@@ -15,7 +15,9 @@ final class AddCityViewController: BaseViewController {
 
   private var viewModel = AddCityViewModel()
 
-  private lazy var searchController = UISearchController(searchResultsController: SearchResultsViewController()).then {
+  private lazy var searchResultsController = SearchResultsViewController()
+
+  private lazy var searchController = UISearchController(searchResultsController: searchResultsController).then {
     $0.searchBar.searchBarStyle = .minimal
     $0.searchBar.placeholder = "도시 검색"
     $0.searchResultsUpdater = self
