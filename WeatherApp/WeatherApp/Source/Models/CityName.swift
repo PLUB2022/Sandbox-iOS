@@ -13,7 +13,7 @@ struct CityName: Codable {
 }
 
 // MARK: - Document
-struct Document: Codable {
+struct Document: Codable, Equatable {
   let addressName: String
   let longitude: String
   let latitude: String
