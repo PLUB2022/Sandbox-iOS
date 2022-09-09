@@ -14,6 +14,8 @@ final class SearchResultsViewController: BaseViewController {
 
   // MARK: - Properties
 
+  var viewModel = SearchResultsViewModel()
+
   private lazy var tableView = UITableView().then {
     $0.dataSource = self
     $0.delegate = self
@@ -47,7 +49,7 @@ final class SearchResultsViewController: BaseViewController {
 extension SearchResultsViewController: UITableViewDataSource {
 
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return 10
+    return viewModel.numberOfRowsInSection
   }
 
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -59,7 +61,7 @@ extension SearchResultsViewController: UITableViewDataSource {
       fatalError("SearchResultsViewController -> UITableViewDataSource.tableView(_:cellForRowAt:)")
     }
 
-    cell.configure(city: "Hello, World!")
+    cell.configure(city: viewModel.cities[indexPath.row].addressName)
     return cell
   }
 }

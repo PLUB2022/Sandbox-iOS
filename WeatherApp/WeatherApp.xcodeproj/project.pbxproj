@@ -23,6 +23,7 @@
 		BA88752828B8AFEB00825747 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BA88752728B8AFEB00825747 /* Assets.xcassets */; };
 		BA88752B28B8AFEB00825747 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA88752928B8AFEB00825747 /* LaunchScreen.storyboard */; };
 		BA95C47A28CACB5700F4985E /* AddCityTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA95C47928CACB5700F4985E /* AddCityTableViewCell.swift */; };
+		BA95C47E28CADD0D00F4985E /* SearchResultsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA95C47D28CADD0D00F4985E /* SearchResultsViewModel.swift */; };
 		BA9989E228B8B38200427AEA /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = BA9989E128B8B38200427AEA /* RxCocoa */; };
 		BA9989E428B8B38200427AEA /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = BA9989E328B8B38200427AEA /* RxSwift */; };
 		BA9989E728B8B3C900427AEA /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = BA9989E628B8B3C900427AEA /* SnapKit */; };
@@ -49,6 +50,7 @@
 		BA88752A28B8AFEB00825747 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BA88752C28B8AFEB00825747 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BA95C47928CACB5700F4985E /* AddCityTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCityTableViewCell.swift; sourceTree = "<group>"; };
+		BA95C47D28CADD0D00F4985E /* SearchResultsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsViewModel.swift; sourceTree = "<group>"; };
 		BAAF403728C8C85A007E1FEA /* SearchResultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsViewController.swift; sourceTree = "<group>"; };
 		BAAF403A28C9E380007E1FEA /* Ex+CALayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Ex+CALayer.swift"; sourceTree = "<group>"; };
 		BAF68C8428BDA9D8009E22E5 /* Ex+UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Ex+UIColor.swift"; sourceTree = "<group>"; };
@@ -145,6 +147,7 @@
 				BA95C47928CACB5700F4985E /* AddCityTableViewCell.swift */,
 				BA4E265228C2254600AE3584 /* AddCityViewController.swift */,
 				BAAF403728C8C85A007E1FEA /* SearchResultsViewController.swift */,
+				BA95C47D28CADD0D00F4985E /* SearchResultsViewModel.swift */,
 			);
 			path = AddCity;
 			sourceTree = "<group>";
@@ -302,6 +305,7 @@
 				BAF68C8528BDA9D8009E22E5 /* Ex+UIColor.swift in Sources */,
 				BA88751F28B8AFEB00825747 /* AppDelegate.swift in Sources */,
 				BAAF403828C8C85A007E1FEA /* SearchResultsViewController.swift in Sources */,
+				BA95C47E28CADD0D00F4985E /* SearchResultsViewModel.swift in Sources */,
 				BA4E265328C2254600AE3584 /* AddCityViewController.swift in Sources */,
 				BA4E265128C1E1E000AE3584 /* HomeCoordinator.swift in Sources */,
 				BA88752128B8AFEB00825747 /* SceneDelegate.swift in Sources */,
