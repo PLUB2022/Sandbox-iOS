@@ -13,12 +13,17 @@ import RxSwift
 import SnapKit
 import Then
 
+protocol AddCityViewControllerDelegate {
+
+  func pop()
+}
 final class AddCityViewController: BaseViewController {
 
   // MARK: - Properties
 
   private let disposeBag = DisposeBag()
   private var viewModel = AddCityViewModel()
+  var delegate: AddCityViewControllerDelegate?
 
   private let searchController = UISearchController(searchResultsController: SearchResultsViewController()).then {
     $0.searchBar.searchBarStyle = .minimal
@@ -87,6 +92,7 @@ final class AddCityViewController: BaseViewController {
                 weather: weather.weather[0].weatherDescription
               )
               UserDefaults.standard.currentCityWeatherInfo = model
+              self?.delegate?.pop()
             case .failure(let error):
               print(error)
             }

@@ -10,6 +10,14 @@ class AddCityCoordinator: Coordinator {
 
   func start() {
     let addCityVC = AddCityViewController()
+    addCityVC.delegate = self
     navigationController.pushViewController(addCityVC, animated: true)
+  }
+}
+
+extension AddCityCoordinator: AddCityViewControllerDelegate {
+
+  func pop() {
+    navigationController.popViewController(animated: true)
   }
 }
