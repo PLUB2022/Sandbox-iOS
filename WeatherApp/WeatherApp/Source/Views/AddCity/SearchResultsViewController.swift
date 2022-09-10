@@ -43,7 +43,6 @@ final class SearchResultsViewController: BaseViewController {
     tableView.rx.itemSelected
       .subscribe(onNext: { [weak self] in
         self?.selectedCitySubject.onNext(self?.viewModel.cities.value[$0.row])
-        self?.selectedCitySubject.onCompleted()
         self?.dismiss(animated: true)
       })
       .disposed(by: disposeBag)

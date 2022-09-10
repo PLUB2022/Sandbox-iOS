@@ -73,7 +73,11 @@ final class AddCityViewController: BaseViewController {
       .disposed(by: disposeBag)
 
     searchResultsController.selectedCitySubject
+      .debug()
       .compactMap { $0 }
+      .filter { [weak self] in
+        !(self?.viewModel.items.value.contains($0) ?? true)
+      }
       .subscribe { [weak self] in
         guard let array = self?.viewModel.items.value else { return }
         self?.viewModel.items.accept(array + [$0])
