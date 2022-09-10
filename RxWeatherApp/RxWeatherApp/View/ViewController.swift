@@ -12,6 +12,8 @@ import RxCocoa
 
 class ViewController: UIViewController {
   
+  let disposeBag = DisposeBag()
+  
   private let searchBar: UITextField = {
     let searchBar = UITextField()
     searchBar.borderStyle = .roundedRect
@@ -39,6 +41,7 @@ class ViewController: UIViewController {
     configure()
     addSubView()
     makeConstraints()
+    searchEditingEnded()
   }
   
   private func configure(){
@@ -65,7 +68,49 @@ class ViewController: UIViewController {
 
   }
   
+  private func searchEditingEnded(){
+    self.searchBar
+      .rx
+      .controlEvent(.editingDidEndOnExit)
+      .asObservable()
+      .map { self.searchBar.text }
+      .subscribe(onNext: { city in
+        if let city = city {
+          if city.isEmpty {
+            self.displayWeather(nil)
+          }else{
+            self.fetchWeather(by: city)
+          }
+        }
+      }).disposed(by: disposeBag)
+
+  }
   
+  private func fetchWeather(by city: String){
+    guard let cityEncoded = city.addingPercentEncoding(withAllowedCharacters: .urlUserAllowed),
+          let url = APIService.getURL(city: cityEncoded) else { return }
+    let resource = Resource<WeatherResponse>(url: url)
+    
+    //USING DRIVER AND CONTROLPROPERTY
+    let search = URLRequest
+        .load(resource: resource)
+        .observeOn(MainScheduler.instance)
+    
+    search
+      .map { "\($0.resultWeather.temp) 𝗙" }
+        .asDriver(onErrorJustReturn: "ERROR")
+        .drive(self.tempLabel.rx.text)
+        .disposed(by: disposeBag)
+
+  }
+  
+  private func displayWeather(_ weather: Weather?){
+    if let weather = weather {
+      self.tempLabel.text = "\(weather.temp)"
+    }else{
+      self.tempLabel.text = "온도가 표시됩니다."
+    }
+  }
   
 }
 

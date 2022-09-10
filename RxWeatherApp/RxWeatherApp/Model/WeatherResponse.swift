@@ -6,3 +6,17 @@
 //
 
 import Foundation
+
+struct WeatherResponse: Decodable{
+  let resultWeather: Weather
+}
+
+struct Weather: Decodable{
+  let temp: Double
+}
+
+extension WeatherResponse{
+  static var empty: WeatherResponse {
+    return WeatherResponse(resultWeather: Weather(temp: 0.0))
+  }
+}
