@@ -18,7 +18,8 @@ extension URLRequest {
     return Observable
       .from([resource.url])
       .flatMap { url -> Observable<Data> in
-        let request = URLRequest(url: url)
+        var request = URLRequest(url: url)
+        request.httpMethod = "GET"
         return URLSession.shared.rx.data(request: request)
       }.map { data -> T in
         return try JSONDecoder().decode(T.self, from: data)

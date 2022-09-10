@@ -46,7 +46,7 @@ class ViewController: UIViewController {
   override func viewDidLoad(){
     super.viewDidLoad()
     // Do any additional setup after loading the view.
-    view.backgroundColor = UIColor.lightGray
+    view.backgroundColor = UIColor(red: 253/255, green: 236/255, blue: 166/255, alpha: 1)
     
     configure()
     addSubView()
@@ -74,12 +74,12 @@ class ViewController: UIViewController {
     
     tempLabel.snp.makeConstraints{
       $0.centerX.equalTo(view.snp.centerX)
-      $0.top.equalTo(searchBar.snp.bottom).offset(100)
+      $0.top.equalTo(searchBar.snp.bottom).offset(120)
     }
     
     descriptionLabel.snp.makeConstraints{
       $0.centerX.equalTo(view.snp.centerX)
-      $0.top.equalTo(tempLabel.snp.bottom).offset(100)
+      $0.top.equalTo(tempLabel.snp.bottom).offset(120)
     }
     
   }
@@ -87,7 +87,7 @@ class ViewController: UIViewController {
   private func searchEditingEnded(){
     self.searchBar
       .rx
-      .controlEvent(.editingDidEndOnExit)
+      .controlEvent(.editingDidEndOnExit) // Enter 처리 구독
       .asObservable()
       .map { self.searchBar.text }
       .subscribe(onNext: { city in
@@ -104,19 +104,18 @@ class ViewController: UIViewController {
   }
   
   private func fetchWeather(by city: String){
-    guard let cityEncoded = city.addingPercentEncoding(withAllowedCharacters: .urlUserAllowed),
-          let url = APIService.getURL(city: cityEncoded) else { return }
-    let resource = Resource<WeatherResponse>(url: url)
+    let url = APIService.getURL(city: city) ?? URL(string: "")
+    let resource = Resource<WeatherResponse>(url: url!)
     
     let search = URLRequest
       .load(resource: resource)
-      .observeOn(MainScheduler.instance)
-    
+      .observe(on: MainScheduler.instance)
+
     search
       .debug()
       .map { "\($0.main.FahrenheitToCelsius) C" }
       .asDriver(onErrorJustReturn: "ERROR")
-      .drive(self.tempLabel.rx.text)
+      .drive(self.tempLabel.rx.text) // 무조건 Main thread에서 동작
       .disposed(by: disposeBag)
     
     search
@@ -133,7 +132,7 @@ class ViewController: UIViewController {
   }
   
   private func displayDescription(_ weatherInfo: WeatherInfo?){
-    self.descriptionLabel.text = "\(weatherInfo?.description ?? "")"
+    self.descriptionLabel.text = "\(weatherInfo?.description ?? "EMPTY")"
   }
   
 }
