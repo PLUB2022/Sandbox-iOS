@@ -10,9 +10,12 @@
 		0A059EAD28CC717900687C0E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A059EAC28CC717900687C0E /* AppDelegate.swift */; };
 		0A059EAF28CC717900687C0E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A059EAE28CC717900687C0E /* SceneDelegate.swift */; };
 		0A059EB128CC717900687C0E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A059EB028CC717900687C0E /* ViewController.swift */; };
-		0A059EB428CC717900687C0E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0A059EB228CC717900687C0E /* Main.storyboard */; };
 		0A059EB628CC717A00687C0E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0A059EB528CC717A00687C0E /* Assets.xcassets */; };
 		0A059EB928CC717A00687C0E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0A059EB728CC717A00687C0E /* LaunchScreen.storyboard */; };
+		0A059EEC28CC744900687C0E /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = 0A059EEB28CC744900687C0E /* RxCocoa */; };
+		0A059EEE28CC744900687C0E /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 0A059EED28CC744900687C0E /* RxSwift */; };
+		0A78A48128CC780C00FBA7E8 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 0A78A48028CC780C00FBA7E8 /* SnapKit */; };
+		0A78A48928CC80C600FBA7E8 /* WeatherResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A78A48828CC80C600FBA7E8 /* WeatherResponse.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,10 +23,10 @@
 		0A059EAC28CC717900687C0E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0A059EAE28CC717900687C0E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		0A059EB028CC717900687C0E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		0A059EB328CC717900687C0E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0A059EB528CC717A00687C0E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0A059EB828CC717A00687C0E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0A059EBA28CC717A00687C0E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0A78A48828CC80C600FBA7E8 /* WeatherResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherResponse.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +34,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0A78A48128CC780C00FBA7E8 /* SnapKit in Frameworks */,
+				0A059EEE28CC744900687C0E /* RxSwift in Frameworks */,
+				0A059EEC28CC744900687C0E /* RxCocoa in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -58,13 +64,29 @@
 			children = (
 				0A059EAC28CC717900687C0E /* AppDelegate.swift */,
 				0A059EAE28CC717900687C0E /* SceneDelegate.swift */,
-				0A059EB028CC717900687C0E /* ViewController.swift */,
-				0A059EB228CC717900687C0E /* Main.storyboard */,
+				0A78A48728CC80B300FBA7E8 /* Model */,
+				0A78A48428CC7B1C00FBA7E8 /* View */,
 				0A059EB528CC717A00687C0E /* Assets.xcassets */,
 				0A059EB728CC717A00687C0E /* LaunchScreen.storyboard */,
 				0A059EBA28CC717A00687C0E /* Info.plist */,
 			);
 			path = RxWeatherApp;
+			sourceTree = "<group>";
+		};
+		0A78A48428CC7B1C00FBA7E8 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				0A059EB028CC717900687C0E /* ViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		0A78A48728CC80B300FBA7E8 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				0A78A48828CC80C600FBA7E8 /* WeatherResponse.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -83,6 +105,11 @@
 			dependencies = (
 			);
 			name = RxWeatherApp;
+			packageProductDependencies = (
+				0A059EEB28CC744900687C0E /* RxCocoa */,
+				0A059EED28CC744900687C0E /* RxSwift */,
+				0A78A48028CC780C00FBA7E8 /* SnapKit */,
+			);
 			productName = RxWeatherApp;
 			productReference = 0A059EA928CC717900687C0E /* RxWeatherApp.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +138,10 @@
 				Base,
 			);
 			mainGroup = 0A059EA028CC717900687C0E;
+			packageReferences = (
+				0A059EEA28CC744900687C0E /* XCRemoteSwiftPackageReference "RxSwift" */,
+				0A78A47F28CC780C00FBA7E8 /* XCRemoteSwiftPackageReference "SnapKit" */,
+			);
 			productRefGroup = 0A059EAA28CC717900687C0E /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -127,7 +158,6 @@
 			files = (
 				0A059EB928CC717A00687C0E /* LaunchScreen.storyboard in Resources */,
 				0A059EB628CC717A00687C0E /* Assets.xcassets in Resources */,
-				0A059EB428CC717900687C0E /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,6 +168,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0A78A48928CC80C600FBA7E8 /* WeatherResponse.swift in Sources */,
 				0A059EB128CC717900687C0E /* ViewController.swift in Sources */,
 				0A059EAD28CC717900687C0E /* AppDelegate.swift in Sources */,
 				0A059EAF28CC717900687C0E /* SceneDelegate.swift in Sources */,
@@ -147,14 +178,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		0A059EB228CC717900687C0E /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				0A059EB328CC717900687C0E /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		0A059EB728CC717A00687C0E /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -292,7 +315,6 @@
 				INFOPLIST_FILE = RxWeatherApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -320,7 +342,6 @@
 				INFOPLIST_FILE = RxWeatherApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -358,6 +379,43 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		0A059EEA28CC744900687C0E /* XCRemoteSwiftPackageReference "RxSwift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ReactiveX/RxSwift.git";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+		0A78A47F28CC780C00FBA7E8 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		0A059EEB28CC744900687C0E /* RxCocoa */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0A059EEA28CC744900687C0E /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxCocoa;
+		};
+		0A059EED28CC744900687C0E /* RxSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0A059EEA28CC744900687C0E /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxSwift;
+		};
+		0A78A48028CC780C00FBA7E8 /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0A78A47F28CC780C00FBA7E8 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 0A059EA128CC717900687C0E /* Project object */;
 }
