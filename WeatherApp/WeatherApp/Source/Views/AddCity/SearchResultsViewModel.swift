@@ -10,5 +10,5 @@ import Foundation
 import RxCocoa
 
 struct SearchResultsViewModel {
-  var cities = BehaviorRelay(value: [Document]())
+  var cities = BehaviorRelay(value: [CityDocument]())
 }

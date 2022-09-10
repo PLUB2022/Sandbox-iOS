@@ -10,7 +10,7 @@ import Alamofire
 
 enum WeatherManager: URLRequestConvertible {
 
-  case weatherData(document: Document)
+  case weatherData(document: CityDocument)
 
   var baseURL: URL {
     switch self {

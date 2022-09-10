@@ -19,7 +19,7 @@ final class SearchResultsViewController: BaseViewController {
   private let disposeBag = DisposeBag()
   var viewModel = SearchResultsViewModel()
 
-  let selectedCitySubject = PublishSubject<Document?>()
+  let selectedCitySubject = PublishSubject<CityDocument?>()
 
   lazy var tableView = UITableView().then {
     $0.register(AddCityTableViewCell.self, forCellReuseIdentifier: AddCityTableViewCell.id)

@@ -14,13 +14,13 @@ class AddCityViewModel {
 
   let disposeBag = DisposeBag()
 
-  var items = BehaviorRelay(value: [Document]())
+  var items = BehaviorRelay(value: [CityDocument]())
 
-  private var cities: [Document] {
+  private var cities: [CityDocument] {
     get {
-      var modelArray: [Document]?
+      var modelArray: [CityDocument]?
       if let data = UserDefaults.standard.data(forKey: "Cities") {
-        modelArray = try? PropertyListDecoder().decode([Document].self, from: data)
+        modelArray = try? PropertyListDecoder().decode([CityDocument].self, from: data)
       }
       return modelArray ?? []
     }

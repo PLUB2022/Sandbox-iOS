@@ -8,12 +8,10 @@
 import Foundation
 
 struct CityName: Codable {
-  let documents: [Document]
-  let meta: Meta
+  let documents: [CityDocument]
 }
 
-// MARK: - Document
-struct Document: Codable, Equatable {
+struct CityDocument: Codable, Equatable {
   let addressName: String
   let longitude: String
   let latitude: String
@@ -22,18 +20,5 @@ struct Document: Codable, Equatable {
     case addressName = "address_name"
     case longitude = "x"
     case latitude = "y"
-  }
-}
-
-// MARK: - Meta
-struct Meta: Codable {
-  let isEnd: Bool
-  let pageableCount: Int
-  let totalCount: Int
-
-  enum CodingKeys: String, CodingKey {
-    case isEnd = "is_end"
-    case pageableCount = "pageable_count"
-    case totalCount = "total_count"
   }
 }
