@@ -8,15 +8,22 @@
 import Foundation
 
 struct WeatherResponse: Decodable{
-  let resultWeather: Weather
+  let main: TempInfo
+  let weather: [WeatherInfo]
 }
 
-struct Weather: Decodable{
+struct TempInfo: Decodable{
   let temp: Double
-}
-
-extension WeatherResponse{
-  static var empty: WeatherResponse {
-    return WeatherResponse(resultWeather: Weather(temp: 0.0))
+  
+  var FahrenheitToCelsius: Double{
+    return round (temp - 273.15)
   }
 }
+
+
+struct WeatherInfo: Decodable{
+  let id: Int
+  let main: String
+  let description: String
+}
+
