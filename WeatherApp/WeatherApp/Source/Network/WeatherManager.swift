@@ -20,6 +20,7 @@ enum WeatherManager: URLRequestConvertible {
       url.queryItems = [
         URLQueryItem(name: "lat", value: document.latitude),
         URLQueryItem(name: "lon", value: document.longitude),
+        URLQueryItem(name: "units", value: "metric"),
         URLQueryItem(name: "appid", value: APIConstants.Weather.accessToken)
       ]
       return url.url!
