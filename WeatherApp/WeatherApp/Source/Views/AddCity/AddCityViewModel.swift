@@ -10,11 +10,11 @@ import Foundation
 import RxSwift
 import RxCocoa
 
-class AddCityViewModel {
+final class AddCityViewModel {
 
   let disposeBag = DisposeBag()
 
-  var items = BehaviorRelay(value: [CityDocument]())
+  let items = BehaviorRelay(value: [CityDocument]())
 
   private var cities: [CityDocument] {
     get {
