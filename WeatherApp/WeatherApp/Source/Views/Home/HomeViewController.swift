@@ -60,6 +60,14 @@ class HomeViewController: BaseViewController {
     super.viewDidLoad()
   }
 
+  override func viewWillAppear(_ animated: Bool) {
+    super.viewWillAppear(animated)
+
+    cityLabel.text = UserDefaults.standard.currentCityWeatherInfo.cityName
+    temperatureLabel.text = "\(UserDefaults.standard.currentCityWeatherInfo.temperature)°"
+    descriptionLabel.text = UserDefaults.standard.currentCityWeatherInfo.weather
+  }
+
   // MARK: - Layout Configuration
 
   override func setupLayouts() {
