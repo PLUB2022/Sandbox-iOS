@@ -20,9 +20,7 @@ final class AddCityViewController: BaseViewController {
   private let disposeBag = DisposeBag()
   private var viewModel = AddCityViewModel()
 
-  private lazy var searchResultsController = SearchResultsViewController()
-
-  private lazy var searchController = UISearchController(searchResultsController: searchResultsController).then {
+  private let searchController = UISearchController(searchResultsController: SearchResultsViewController()).then {
     $0.searchBar.searchBarStyle = .minimal
     $0.searchBar.placeholder = "도시 검색"
   }
@@ -36,6 +34,10 @@ final class AddCityViewController: BaseViewController {
 
   override func viewDidLoad() {
     super.viewDidLoad()
+    guard let searchResultsController = self.searchController.searchResultsController as? SearchResultsViewController
+    else {
+      return
+    }
 
     // TODO: 나중에 ReactorKit의 bind로 빼야합니다.
     viewModel.items
@@ -59,8 +61,8 @@ final class AddCityViewController: BaseViewController {
           .responseDecodable(of: CityName.self) { response in
             switch response.result {
             case .success(let cities):
-              DispatchQueue.main.async { [weak self] in
-                self?.searchResultsController.viewModel.cities.accept(cities.documents)
+              DispatchQueue.main.async {
+                searchResultsController.viewModel.cities.accept(cities.documents)
               }
             case .failure(let error):
               print(error)
