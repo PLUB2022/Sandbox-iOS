@@ -139,6 +139,6 @@ iOSInjectionProject/
 **/xcshareddata/WorkspaceSettings.xcsettings
 
 ### Swift File
-/RxWeatherApp/Network/APIService.swift
+RxWeatherApp/Network/APIService.swift
 
 # End of https://www.toptal.com/developers/gitignore/api/xcode,macos,cocoapods,swift
