@@ -11,9 +11,12 @@ extension UserDefaults {
 
   var currentCityWeatherInfo: CityWeatherInfo {
     get {
-        return (
-          try? JSONDecoder().decode(CityWeatherInfo.self, from: UserDefaults.standard.data(forKey: #function)!)
-        ) ?? CityWeatherInfo(cityName: "", temperature: 0, weather: "")
+      var value: CityWeatherInfo?
+      if let data = UserDefaults.standard.data(forKey: #function) {
+        value = try? JSONDecoder().decode(CityWeatherInfo.self, from: data)
+      }
+      return value ?? CityWeatherInfo(cityName: "", temperature: 0, weather: "")
+
     }
     set {
       if let data = try? JSONEncoder().encode(newValue) {
