@@ -72,6 +72,28 @@ final class AddCityViewController: BaseViewController {
       }
       .disposed(by: disposeBag)
 
+    tableView.rx.itemSelected
+      .subscribe(onNext: { [weak self] in
+        guard let cityDocument = self?.viewModel.items.value[$0.row] else { return }
+
+        AF
+          .request(WeatherManager.weatherData(document: cityDocument))
+          .responseDecodable(of: Weather.self) { response in
+            switch response.result {
+            case .success(let weather):
+              let model = CityWeatherInfo(
+                cityName: cityDocument.addressName,
+                temperature: weather.main.temperature,
+                weather: weather.weather[0].weatherDescription
+              )
+              UserDefaults.standard.currentCityWeatherInfo = model
+            case .failure(let error):
+              print(error)
+            }
+          }
+      })
+      .disposed(by: disposeBag)
+
     searchResultsController.selectedCitySubject
       .debug()
       .compactMap { $0 }
