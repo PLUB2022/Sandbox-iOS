@@ -19,6 +19,8 @@ final class SearchResultsViewController: BaseViewController {
   private let disposeBag = DisposeBag()
   var viewModel = SearchResultsViewModel()
 
+  let selectedCitySubject = PublishSubject<Document?>()
+
   lazy var tableView = UITableView().then {
     $0.register(AddCityTableViewCell.self, forCellReuseIdentifier: AddCityTableViewCell.id)
     $0.backgroundColor = .clear
@@ -39,7 +41,9 @@ final class SearchResultsViewController: BaseViewController {
       .disposed(by: disposeBag)
 
     tableView.rx.itemSelected
-      .subscribe(onNext: { [weak self] _ in
+      .subscribe(onNext: { [weak self] in
+        self?.selectedCitySubject.onNext(self?.viewModel.cities.value[$0.row])
+        self?.selectedCitySubject.onCompleted()
         self?.dismiss(animated: true)
       })
       .disposed(by: disposeBag)

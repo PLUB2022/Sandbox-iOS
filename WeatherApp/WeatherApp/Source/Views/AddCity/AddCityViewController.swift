@@ -71,6 +71,14 @@ final class AddCityViewController: BaseViewController {
           .resume()
       }
       .disposed(by: disposeBag)
+
+    searchResultsController.selectedCitySubject
+      .compactMap { $0 }
+      .subscribe { [weak self] in
+        guard let array = self?.viewModel.items.value else { return }
+        self?.viewModel.items.accept(array + [$0])
+      }
+      .disposed(by: disposeBag)
   }
 
   // MARK: - Layout Configuration
