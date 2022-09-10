@@ -16,6 +16,7 @@
 		0A059EEE28CC744900687C0E /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 0A059EED28CC744900687C0E /* RxSwift */; };
 		0A78A48128CC780C00FBA7E8 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 0A78A48028CC780C00FBA7E8 /* SnapKit */; };
 		0A78A48928CC80C600FBA7E8 /* WeatherResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A78A48828CC80C600FBA7E8 /* WeatherResponse.swift */; };
+		0A78A48C28CC8AEC00FBA7E8 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A78A48B28CC8AEC00FBA7E8 /* APIService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +28,7 @@
 		0A059EB828CC717A00687C0E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0A059EBA28CC717A00687C0E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0A78A48828CC80C600FBA7E8 /* WeatherResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherResponse.swift; sourceTree = "<group>"; };
+		0A78A48B28CC8AEC00FBA7E8 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +66,7 @@
 			children = (
 				0A059EAC28CC717900687C0E /* AppDelegate.swift */,
 				0A059EAE28CC717900687C0E /* SceneDelegate.swift */,
+				0A78A48A28CC8AD800FBA7E8 /* Network */,
 				0A78A48728CC80B300FBA7E8 /* Model */,
 				0A78A48428CC7B1C00FBA7E8 /* View */,
 				0A059EB528CC717A00687C0E /* Assets.xcassets */,
@@ -87,6 +90,14 @@
 				0A78A48828CC80C600FBA7E8 /* WeatherResponse.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		0A78A48A28CC8AD800FBA7E8 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				0A78A48B28CC8AEC00FBA7E8 /* APIService.swift */,
+			);
+			path = Network;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -169,6 +180,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0A78A48928CC80C600FBA7E8 /* WeatherResponse.swift in Sources */,
+				0A78A48C28CC8AEC00FBA7E8 /* APIService.swift in Sources */,
 				0A059EB128CC717900687C0E /* ViewController.swift in Sources */,
 				0A059EAD28CC717900687C0E /* AppDelegate.swift in Sources */,
 				0A059EAF28CC717900687C0E /* SceneDelegate.swift in Sources */,
