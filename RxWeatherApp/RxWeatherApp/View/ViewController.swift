@@ -109,17 +109,15 @@ class ViewController: UIViewController {
     
     let search = URLRequest
       .load(resource: resource)
-      .observe(on: MainScheduler.instance)
+//      .observe(on: MainScheduler.instance)
 
     search
-      .debug()
       .map { "\($0.main.FahrenheitToCelsius) C" }
       .asDriver(onErrorJustReturn: "ERROR")
       .drive(self.tempLabel.rx.text) // 무조건 Main thread에서 동작
       .disposed(by: disposeBag)
     
     search
-      .debug()
       .map { "\($0.weather[0].description)" }
       .asDriver(onErrorJustReturn: "ERROR")
       .drive(self.descriptionLabel.rx.text)
